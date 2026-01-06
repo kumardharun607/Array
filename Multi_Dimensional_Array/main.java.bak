@@ -1,0 +1,39 @@
+interface a {
+    void dance(int n);
+    void sing();
+}
+
+abstract class b {
+    abstract void play();
+    abstract void pray(int n);
+}
+
+public class main {
+    public static void main(String[] args) {
+
+        a ref = new a() {
+            public void dance(int n) {
+                System.out.println("Iam interface dance method overridden");
+            }
+            public void sing() {
+                System.out.println("Iam interface sing method overridden");
+            }
+        };
+
+        ref.dance(0);
+        ref.sing();
+
+        b ref1 = new b() {
+            public void play() {
+                System.out.println("Iam abstract play method overridden");
+            }
+            public void pray(int n) {
+                System.out.println("Iam abstract pray method overridden");
+				System.out.println(ref instanceof b);
+            }
+        };
+
+        ref1.play();
+        ref1.pray(0);
+    }
+}

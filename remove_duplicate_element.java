@@ -1,0 +1,34 @@
+import java.util.*;
+class  remove_duplicate_element
+{
+	public static void main(String[] args) 
+	{
+		int a[]={6,3,7,9,8,8,8,3,4,0};
+		
+		int count=0;
+		for (int i=0;i<a.length ;i++ )
+		{
+			if (a[i]==Integer.MIN_VALUE)
+				continue;
+			for (int j=i+1;j<a.length ;j++ )
+			{
+				if (a[i]==a[j])
+				{
+					a[j]=Integer.MIN_VALUE;
+					count++;
+				}
+			}
+		}
+		
+		int res[]=new int[a.length-count];
+		for (int i=0,x=0;i<a.length ;i++ )
+		{
+			if (a[i]==Integer.MIN_VALUE)
+				continue;
+			res[x++]=a[i];
+			
+		}
+		System.out.println("The duplicate element removed array:"+Arrays.toString(a));
+		System.out.println("The duplicate element removed array:"+Arrays.toString(res));
+	}
+}

@@ -1,0 +1,33 @@
+import java.util.*;
+class find_first_and_last_occurance_element
+{
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		int a[]={6,3,7,9,8,8,8,3,4,0};
+		System.out.println("The original array:"+Arrays.toString(a));
+		System.out.print("Enter your target element:");
+		int n=sc.nextInt();
+		int first=-1;
+		int last=-1;
+		
+		
+		for (int i=0;i<a.length ;i++ )
+		{
+			
+			if (a[i]==n)
+			{
+				if (first==-1)
+				{
+					first=i;
+				}
+				last=i;
+				
+			}
+		}
+		System.out.println("The target element is "+n+"Occurance of first position is :"+first);
+		System.out.println("The target element is "+n+"Occurance of last position is :"+last);
+
+		
+	}
+}

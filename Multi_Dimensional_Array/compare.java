@@ -1,0 +1,13 @@
+class compare 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		String s1 = new String("Jaca");
+String s2 = new String("Jaba");
+
+System.out.println(s1 == s2);          // false (reference)
+System.out.println(s1.compareTo(s2));  // 0     (content)
+
+	}
+}

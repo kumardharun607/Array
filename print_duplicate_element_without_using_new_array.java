@@ -1,0 +1,29 @@
+import java.util.*;
+class  print_duplicate_element_without_using_new_array
+{
+	public static void main(String[] args) 
+	{
+		int a[]={6,3,7,9,8,8,8,3,4,0};
+		
+		
+		for (int i=0;i<a.length ;i++ )
+		{
+			int count=0;
+			if (a[i]==Integer.MIN_VALUE)
+				continue;
+			for (int j=i+1;j<a.length ;j++ )
+			{
+				if (a[i]==a[j])
+				{
+					a[j]=Integer.MIN_VALUE;
+					count++;
+				}
+			}
+			if (count>0)
+			{
+				System.out.println(a[i]+"-"+count);
+			}
+			
+		}
+	}
+}

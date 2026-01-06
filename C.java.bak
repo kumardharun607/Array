@@ -1,0 +1,62 @@
+
+interface A {
+    default void show() {
+        System.out.println("A");
+		
+	}
+	
+		
+	default void verify() {
+        System.out.println("Iam a verify method");
+		commonLogic();
+		helper();
+	}
+	private void commonLogic() {
+        System.out.println("Common logic inside interface");
+    }
+     private  void helper() {
+        System.out.println("Helper method");
+    }
+	void method();
+	public static void runs()
+	{
+		 System.out.println("*************");
+	}
+}
+
+interface B extends A {
+    /*default void show() {
+        System.out.println("B");
+		
+    }*/
+	public static void runs()
+	{
+		runs();
+		 System.out.println("@@@@@@@@@@@@@@");
+	}
+	
+}
+
+abstract class C implements A, B {
+    
+    /*public void show() {
+       
+		System.out.println("Overrided");// or B.super.show();
+    }
+	 
+	public static void main(String[]args)
+	{
+		A ref=new C();
+		ref.show();
+		ref.verify();
+		A.display();
+		
+	}*/
+	public static void main(String[]args)
+	{
+		
+		System.out.println("Iam a static main method");
+		B.runs();
+	}
+}
+

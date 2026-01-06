@@ -1,0 +1,14 @@
+interface Demo {
+    void display();
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Demo d = new Demo() {
+            public void display() {
+                System.out.println("Anonymous class");
+            }
+        };
+        d.display();
+    }
+}

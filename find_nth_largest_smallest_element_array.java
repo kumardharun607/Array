@@ -1,0 +1,80 @@
+import java.util.*;
+class find_nth_largest_smallest_element_array
+{
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		int a[]={6,3,7,9,8,8,8,3,4,0};
+		int temp[]=a.clone();
+		
+		System.out.println(Arrays.toString(a));
+		System.out.print("Enter the value for find nth largest:");
+		int largest_n=sc.nextInt();
+		System.out.print("Enter the value for find nth largest:");
+		int smallest_n=sc.nextInt();
+		int largest=Integer.MIN_VALUE;
+		int smallest=Integer.MAX_VALUE;
+		for (int i=1;i<= largest_n;i++ )
+		{
+			largest=find_largest(a);
+			replace_largest(a,largest);
+		}
+		for (int i=1;i<=smallest_n ;i++ )
+		{
+			smallest=find_smallest(temp);
+			replace_smallest(temp,smallest);
+		}
+		System.out.println("Largest value is:"+largest);
+		System.out.println("Smallest value is:"+smallest);
+	}
+	public static int find_largest(int a[])
+	{
+		
+		int largest=Integer.MIN_VALUE;
+		for (int i=0;i<a.length ;i++ )
+		{
+			if (a[i]>largest)
+			{
+				largest=a[i];
+			}
+		}
+		return largest;
+		
+	}
+	public static void replace_largest(int a[],int largest)
+	{
+		for (int i=0;i<a.length ;i++ )
+		{
+			if (a[i]==largest)
+			{
+				a[i]=Integer.MIN_VALUE;
+				break; // only replace one occurrence
+			}
+		}
+	}
+	//-----------------------------------------------
+	public static int find_smallest(int temp[])
+	{
+		int smallest=Integer.MAX_VALUE;
+		for (int i=0;i<temp.length ;i++ )
+		{
+			if (temp[i]<smallest)
+			{
+				smallest=temp[i];
+			}
+		}
+		return smallest;
+	}
+	public static void replace_smallest(int temp[],int smallest)
+	{
+		for (int i=0;i<temp.length ;i++ )
+		{
+			if (temp[i]==smallest)
+			{
+				temp[i]=Integer.MAX_VALUE;
+				break; // only replace one occurrence
+			}
+		}
+	}
+	
+}

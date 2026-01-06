@@ -1,0 +1,29 @@
+import java.util.*;
+class  find_missing_number
+{
+	public static void main(String[] args) 
+	{
+		int a[]={1,2,4,8};
+		
+		
+		/*if finding the missing element in the array means if should be 
+		
+		
+		step1:Remove the duplicate element 
+		step2:Array can be sorted
+		
+		*/
+		Arrays.sort(a);
+		
+		System.out.println("Original array:"+Arrays.toString(a));
+		
+		for (int i=0,m=1;i<a.length ;i++,m++ )
+		{
+			if (a[i]!=m)
+			{
+				System.out.print(m+" ");
+				i--;
+			}
+		}
+	}
+}

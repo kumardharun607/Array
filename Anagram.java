@@ -1,0 +1,23 @@
+import java.util.*;
+class Anagram 
+{
+	public static void main(String[] args) 
+	{
+		String str1="ear th";
+		String str2="he art";
+		 // Remove spaces and convert to lowercase
+        str1 = str1.replace("\\s", "").toLowerCase();
+        str2 = str2.replace("\\s", "").toLowerCase();
+				
+
+
+		char a1[]=str1.toCharArray();
+		char a2[]=str2.toCharArray();
+		Arrays.sort(a1);
+		Arrays.sort(a2);
+        System.out.println(Arrays.equals(a1,a2));
+		System.out.println(a1);
+		System.out.println(a2);
+
+	}
+}

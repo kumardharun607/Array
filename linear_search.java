@@ -1,0 +1,32 @@
+import java.util.*;
+class linear_search 
+{
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		int a[]={6,3,7,9,8,8,8,3,4,0};
+		System.out.println("The original array:"+Arrays.toString(a));
+		System.out.print("Enter the value which you want:");
+		int n=sc.nextInt();
+		int res=linearSearch(a,n);
+		if (res==-1)
+		{
+			System.out.println("The element not found.....");
+		}
+		else
+		{
+			System.out.println("The element Found on index is:"+res);
+		}
+	}
+	public static int linearSearch(int a[],int n)
+	{
+		for (int i=0;i<a.length ;i++ )
+		{
+			if (a[i]==n)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+}

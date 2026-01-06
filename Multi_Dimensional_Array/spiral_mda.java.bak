@@ -1,0 +1,51 @@
+import java.util.*;
+class spiral_mda 
+{
+	public static void main(String[] args) 
+	{
+		int a[][]={ {1,2,3,4,5},
+			        {16,17,18,19,6},
+			        {15,24,26,20,7},
+			        {14,23,22,21,8},
+			        {13,12,11,10,9}};
+		
+		int n=5;
+		int top=0,left=0,right=n-1,bottom=n-1;
+		
+		while (left<=right && top<=bottom)
+		{
+			//left to right
+			
+			for (int i=left;i<=right ;i++ )
+			{
+				System.out.print(a[top][i]+" ");
+		
+			}
+			top++;
+			
+			//top to bottom
+			
+			for (int i=top ;i<=bottom;i++ )
+			{
+				System.out.print(a[right][i]+" ");
+			}
+			right--;
+			
+			//right to left
+			
+			for (int i=right;i>=left ;i-- )
+			{
+				System.out.print(a[bottom][i]+" ");
+			}
+			bottom--;
+			
+			//bottom to top
+			
+			for (int i=bottom;i>=top ;i-- )
+			{
+				System.out.print(a[left][i]+" ");
+			}
+			left++;
+		}
+	}
+}

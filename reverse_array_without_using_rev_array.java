@@ -1,0 +1,20 @@
+import java.util.*;
+class reverse_array_without_using_rev_array
+{
+	public static void main(String[] args) 
+	{
+		int a[]={6,3,7,9,8,8,8,3,4,0};
+		int l=0;
+		int r=a.length-1;
+		while(l<r)
+		{
+			int temp=a[l];
+			a[l]=a[r];
+			a[r]=temp;
+			l++;
+			r--;
+		}
+		
+		System.out.println(Arrays.toString(a));
+	}
+}
